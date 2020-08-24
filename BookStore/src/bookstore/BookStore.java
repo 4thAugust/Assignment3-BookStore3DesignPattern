@@ -6,6 +6,8 @@
 package bookstore;
 import Models.ObjectPool;
 import Models.BookPool;
+import Models.TextBook;
+import Models.User;
 /**
  *
  * @author memory
@@ -17,6 +19,10 @@ public class BookStore {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        BookPool bookPool = BookPool.getBookPool("Math Daily", "memory", "Math");
+        User testUser = new User("Mem");
+        testUser.setTextBook(bookPool.borrowBook());
+        System.out.println(testUser.getTextBook().name);
     }
     
 }

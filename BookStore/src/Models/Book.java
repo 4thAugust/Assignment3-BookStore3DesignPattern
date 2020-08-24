@@ -10,7 +10,7 @@ package Models;
  * @author memory
  */
 public abstract class Book {
-    public int page;
+    public String writer;
     public String name;
 
     public Book() {
@@ -18,7 +18,7 @@ public abstract class Book {
 
     public Book(Book target) {
         if (target != null) {
-            this.page = target.page;
+            this.writer = target.writer;
             this.name = target.name;
         }
     }

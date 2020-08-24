@@ -9,21 +9,33 @@ package Models;
  *
  * @author memory
  */
-public class BookPool extends ObjectPool<Book> {
+public class BookPool extends ObjectPool<TextBook> {
+    
+    
+    public static String name, writer, subject;
 
-    private String name, writer;
-
-    public BookPool(String name, String writer) {
-        this.name = new String();
-        this.writer = new String();
-        this.name = name;
-        this.writer = writer;
+    private static BookPool instance = new BookPool();
+    private BookPool() {
+        
+    }
+    
+    public static BookPool getBookPool(String name, String writer, String subject){
+        
+        
+        instance.name = name;
+        instance.writer = writer;
+        instance.subject = subject;
+        return instance;
     }
 
     @Override
-    protected Book create() {
+    protected TextBook create() {
         try {
-            return (new TextBook());
+            TextBook textBook = new TextBook();
+            textBook.name = this.name;
+            textBook.writer = this.writer;
+            textBook.subject = this.subject;
+            return (textBook);
         } catch (Exception e) {
             e.printStackTrace();
             return (null);

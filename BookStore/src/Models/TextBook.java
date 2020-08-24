@@ -10,7 +10,7 @@ package Models;
  * @author memory
  */
 public class TextBook extends Book{
-    private String subject;
+    public String subject;
     public TextBook(){
         
     }

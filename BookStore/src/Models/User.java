@@ -10,5 +10,17 @@ package Models;
  * @author memory
  */
 public class User {
+    private String name;
+    private TextBook textBook;
+    public User(String name){
+        this.name = name;
+        textBook = new TextBook();
+    }
+    public void setTextBook(TextBook tb){
+        this.textBook = tb;
+    }
+    public TextBook getTextBook(){
+        return(textBook);
+    }
     
 }
