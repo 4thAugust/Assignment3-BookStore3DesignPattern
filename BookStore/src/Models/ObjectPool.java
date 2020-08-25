@@ -63,4 +63,12 @@ public abstract class ObjectPool<O> {
         borrowed.remove(o);
         bookShelves.put(o, System.currentTimeMillis());
     }
+    
+    public Number getBookShelveLength(){
+        return bookShelves.size();
+    }
+    
+    public Number getBorrowedLength(){
+        return borrowed.size();
+    }
 }

@@ -21,8 +21,13 @@ public class BookStore {
         // TODO code application logic here
         BookPool bookPool = BookPool.getBookPool("Math Daily", "memory", "Math");
         User testUser = new User("Mem");
+        
         testUser.setTextBook(bookPool.borrowBook());
+        System.out.println("Borrowed have "+bookPool.getBorrowedLength());
         System.out.println(testUser.getTextBook().name);
+        
+        bookPool.returnBook(testUser.getTextBook());
+        System.out.println("shelve have "+bookPool.getBookShelveLength());
     }
     
 }
